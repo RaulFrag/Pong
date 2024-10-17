@@ -1,5 +1,4 @@
 #pragma once
-#include "Points.h"
 #include "SDL.h"
 
 class Ball

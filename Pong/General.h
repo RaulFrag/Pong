@@ -1,4 +1,4 @@
 #pragma once
 
-#define SCREEN_W 800
-#define SCREEN_H 600
+#define SCREEN_W 900
+#define SCREEN_H 550

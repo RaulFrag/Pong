@@ -11,10 +11,38 @@ Ball::Ball()
 	ball.y = 0;
 	dir = 0;
 	ballWaitToStart = 0;
+	p1 = 0;
+	p2 = 0;
 }
 
 Ball::~Ball()
 {
+}
+
+void Ball::tocaParedP1()
+{
+	p1 = true;
+}
+
+void Ball::tocaParedP2()
+{
+	p2 = true;
+}
+
+void Ball::resetP()
+{
+	p1 = false;
+	p2 = false;
+}
+
+bool Ball::getP1()
+{
+	return p1;
+}
+
+bool Ball::getP2()
+{
+	return p2;
 }
 
 void Ball::resetBall()
@@ -50,6 +78,7 @@ void Ball::update()
 			if (ball.x >= (SCREEN_W - ball.w))
 			{
 				resetBall();
+				tocaParedP1();
 			}
 			if (ball.y <= 0)
 			{
@@ -62,6 +91,7 @@ void Ball::update()
 			if (ball.x >= (SCREEN_W - ball.w))
 			{
 				resetBall();
+				tocaParedP1();
 			}
 			if (ball.y >= (SCREEN_H - ball.h))
 			{
@@ -74,6 +104,7 @@ void Ball::update()
 			if (ball.x <= 0)
 			{
 				resetBall();
+				tocaParedP2();
 			}
 			if (ball.y >= (SCREEN_H - ball.h))
 			{
@@ -86,6 +117,7 @@ void Ball::update()
 			if (ball.x <= 0)
 			{
 				resetBall();
+				tocaParedP2();
 			}
 			if (ball.y <= 0)
 			{

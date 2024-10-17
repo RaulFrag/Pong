@@ -27,7 +27,6 @@ int main(int argr, char* args[]) {
 	SDL_Window* window = NULL;
 	SDL_Surface* screenSurface = NULL;
 
-
 	SDL_Init(SDL_INIT_VIDEO);
 	window = SDL_CreateWindow("Pong",
 		SDL_WINDOWPOS_UNDEFINED,
@@ -42,15 +41,6 @@ int main(int argr, char* args[]) {
 		std::cerr << "SDL could not initialize! SDL Error: " << SDL_GetError() << std::endl;
 		return 1;
 	}
-	Ball pelota;
-
-	pelota.init();
-
-
-
-		
-
-	
 
 	SDL_GameController* mando = findController();
 
@@ -66,9 +56,14 @@ int main(int argr, char* args[]) {
 	joystick ejeJ;
 	ejeJ.y = 0;
 
+	int pP1 = 0;
+	int pP2 = 0;
+
 	bool up = false;
 	bool down = false;
 
+	Ball pelota;
+	pelota.init();
 	Racket raqueta;
 	raqueta.init();
 	bool endgame = false;
@@ -117,6 +112,17 @@ int main(int argr, char* args[]) {
 
 		raqueta.update(ejeJ.y, up, down);
 		pelota.update();
+		if ((pelota.getP1() == true) && (pP1 < 99))
+		{
+			pP1++;
+		}
+		if ((pelota.getP2() == true) && (pP2 < 99))
+		{
+			pP2++;
+		}
+		pelota.resetP();
+
+		cout << pP1 << " " << pP2 << endl;
 	
 		pelota.render(screenSurface);
 		raqueta.render(screenSurface);

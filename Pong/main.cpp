@@ -1,10 +1,13 @@
 #include <iostream>
 #include <string>
 #include "SDL.h"
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
 int main(int argr, char* args[]) {
+	srand(time(NULL));
 	SDL_Window* window = NULL;
 	SDL_Surface* screenSurface = NULL;
 

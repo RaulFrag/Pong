@@ -11,5 +11,6 @@ public:
 	void render();
 
 	SDL_Rect ball;
+	int dir;
 };
 

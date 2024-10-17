@@ -9,7 +9,7 @@ int main(int argr, char* args[]) {
 	SDL_Surface* screenSurface = NULL;
 
 	SDL_Init(SDL_INIT_VIDEO);
-	window = SDL_CreateWindow("Ex 5",
+	window = SDL_CreateWindow("Pong",
 		SDL_WINDOWPOS_UNDEFINED,
 		SDL_WINDOWPOS_UNDEFINED,
 		854, 480,

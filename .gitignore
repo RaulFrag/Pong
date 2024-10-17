@@ -1,7 +1,8 @@
 # Prerequisites
 *.d
 .vs
-x64
+Pong/Pong/x64
+Pong/x64
 
 # Compiled Object files
 *.slo

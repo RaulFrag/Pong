@@ -1,4 +1,5 @@
 #pragma once
+#include "SDL.h"
 class Ball
 {
 public:
@@ -8,5 +9,7 @@ public:
 	void init();
 	void update();
 	void render();
+
+	SDL_Rect ball;
 };
 
